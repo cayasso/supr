@@ -2,7 +2,9 @@
 
 A quick and convenient way to call parent methods in inherited classes, extracted from [Polymer](https://github.com/Polymer/polymer-dev/blob/master/src/lib/super.js).
 
-Note: For this module to work, it is requried to avoid using `strict mode`, this because this super function is requires the use of `caller` which is deprecated in `strict mode` and will return `null`. It's up to you if you want to use it, ES6 will have a `super` with similar functionality.
+Note: For this module to work, please don't use `strict mode`, this because the super function requires the use of `caller` which is deprecated in ES5 `strict mode` and will return `null`. 
+
+It's up to you if you want to use it, ES6 will have a `super` with similar functionality.
 
 ## Instalation
 
