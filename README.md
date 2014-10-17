@@ -15,11 +15,11 @@ $ npm install supr
 ## Usage
 
 ```js
-var $super = require('./super');
+var supr = require('supr');
 
 // Base class
 function Base() {};
-Base.prototype.super = $super;
+Base.prototype.super = supr;
 Base.prototype.say = function(msg) {
   return 'base:' + msg;
 };
