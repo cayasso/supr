@@ -7,7 +7,7 @@ Note: For this module to work, it is requried to avoid using `strict mode`, this
 ## Instalation
 
 ``` bash
-$ npm install verifyd-oplog
+$ npm install supr
 ```
 
 ## Usage
