@@ -1,4 +1,5 @@
 var supr = require('../');
+var util = require("util");;
 
 describe('supr', function () {
   
@@ -13,21 +14,24 @@ describe('supr', function () {
 
     // Sub class
     function Sub() { Base.call(this); };
-    Sub.prototype.__proto__ = Base.prototype;
+
+    util.inherits(Sub, Base);
+
     Sub.prototype.say = function(str) {
       return this.super('sub:' + str);
     };
 
     // Sub sub class
     function SubSub() { Sub.call(this); };
-    SubSub.prototype.__proto__ = Sub.prototype;
+    util.inherits(SubSub, Sub);
     SubSub.prototype.say = function(str) {
       return this.super('subsub:' + str);
     };
 
     // Instance
     var subSub = new SubSub;
-    subSub.say('instance').should.be.eql('base:sub:subsub:instance');
+    subSub.say('instance')
+    .should.be.eql('base:sub:subsub:instance');
   });
 
 });

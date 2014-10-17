@@ -5,6 +5,7 @@
     "name": "Jonathan Brumley",
     "email": "cayasso@gmail.com"
   },
+  "main": "supr.js",
   "scripts": {
     "test": "make test"
   },

@@ -6,6 +6,8 @@ Note: For this module to work, please don't use `strict mode`, this because the 
 
 It's up to you if you want to use it, ES6 will have a `super` with similar functionality.
 
+Works in browsers and NodeJS.
+
 ## Instalation
 
 ``` bash
@@ -16,6 +18,7 @@ $ npm install supr
 
 ```js
 var supr = require('supr');
+var util = require("util");
 
 // Base class
 function Base() {};
@@ -26,18 +29,16 @@ Base.prototype.say = function(msg) {
 
 // Sub class
 function Sub() { Base.call(this); };
-Sub.prototype.__proto__ = Base.prototype;
+util.inherits(Sub, Base);
 Sub.prototype.say = function(str) {
   return this.super('sub:' + str);
-  console.log('sub');
 };
 
 // Sub sub class
 function SubSub() { Sub.call(this); };
-SubSub.prototype.__proto__ = Sub.prototype;
+util.inherits(SubSub, Sub);
 SubSub.prototype.say = function(str) {
   return this.super('subsub:' + str);
-  console.log(' sub + sub');
 };
 
 // Instance
